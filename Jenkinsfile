@@ -19,6 +19,7 @@ pipeline {
         branch 'test'
       }
       steps {
+        error 'fake error to force failure in test stage/gate'
         script{
           if (fileExists('../helloworld-api/development')) {        
             copyArtifacts projectName: '../helloworld-api/development'
